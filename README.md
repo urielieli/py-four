@@ -1,12 +1,20 @@
 # py-four
 
-This is a python implementation to the [**4** esoteric programming language](http://esolangs.org/wiki/4).
+**py-four** is a Python interpreter for the [**4** esoteric programming language](http://esolangs.org/wiki/4).
 
-To use the interpreter, provide a file containing **4** code, or use the `-e` option to provide code through the command line:
+## Quickstart
 
-```python four samples/hello.4```
+To use the interpreter, either pass a file name or the raw code through the `-e` option:
 
-You can try py-four in your browser on [Try it Online!](https://tio.run/##HYuJCcBAEAI7CrP/pf/CNl5EZBTM3XgasMaIxk0R4U2GqDKbHtU5A4fB4RXo4gI3yVFwXXTxlvFbtYoo5rL5HTlF5u4H) thanks to [@DennisMitchell](https://github.com/DennisMitchell/).
+```
+$ python four samples/hello.4
+Hello World!
+
+$ python four -e 3.60072601735005014
+HI
+```
+
+You can try **py-four** in your browser on [Try it Online!](https://tio.run/##HYuJCcBAEAI7CrP/pf/CNl5EZBTM3XgasMaIxk0R4U2GqDKbHtU5A4fB4RXo4gI3yVFwXXTxlvFbtYoo5rL5HTlF5u4H) thanks to [@DennisMitchell](https://github.com/DennisMitchell/).
 
 ## Verbose mode
 
