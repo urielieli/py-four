@@ -1,5 +1,6 @@
-from utils import pythonize, indent_multiline
+from formatting import indent_multiline
 from instructions import Instruction, RootInstruction
+
 
 class LoopInstruction(RootInstruction):
 	arity = 1
@@ -19,7 +20,7 @@ class LoopInstruction(RootInstruction):
 
 	@property
 	def python(self):
-		transpiled = 'while {0} != 0:'.format(*map(pythonize, self.params))
+		transpiled = 'while {0} != 0:'.format(self.params[0].python)
 
 		if self.instructions:
 			return '{}\n{}'.format(transpiled,

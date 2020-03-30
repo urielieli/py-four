@@ -1,7 +1,7 @@
 import operator
 
-from utils import pythonize
 from instructions import Instruction
+
 
 class ArithmaticInstruction(Instruction):
 	arity = 3
@@ -12,7 +12,12 @@ class ArithmaticInstruction(Instruction):
 
 	@property
 	def python(self):
-		return '{1} = {0}({2}, {3})'.format(self.operation.__name__, *map(pythonize, self.params))
+		return '{1} = {0}({2}, {3})'.format(
+			self.operation.__name__,
+			self.params[0].python,
+			self.params[1].python,
+			self.params[2].python
+		)
 
 	@property
 	def cell(self):
@@ -35,12 +40,14 @@ class ArithmaticInstruction(Instruction):
 	def operand2(self, value):
 		self[2] = value
 
+
 class AdditionInstruction(ArithmaticInstruction):
 	opcode = 0
 	operation = operator.add
 
 	def __init__(self, *params):
 		super().__init__(self.opcode, self.operation, *params)
+
 
 class SubtractionInstruction(ArithmaticInstruction):
 	opcode = 1
@@ -49,12 +56,14 @@ class SubtractionInstruction(ArithmaticInstruction):
 	def __init__(self, *params):
 		super().__init__(self.opcode, self.operation, *params)
 
+
 class MultiplicationInstruction(ArithmaticInstruction):
 	opcode = 2
 	operation = operator.mul
 
 	def __init__(self, *params):
 		super().__init__(self.opcode, self.operation, *params)
+
 
 class DivisionInstruction(ArithmaticInstruction):
 	opcode = 3

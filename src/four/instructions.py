@@ -1,7 +1,16 @@
 import re
 
-from utils import indent_multiline, pythonize, classproperty
+from formatting import indent_multiline
 from operands import GridAccess, Constant
+
+
+class classproperty:
+	def __init__(self, method):
+		self.method = method
+
+	def __get__(self, obj, owner):
+		return self.method(owner)
+
 
 class Instruction:
 	arity = 0
@@ -59,7 +68,7 @@ class SetInstruction(Instruction):
 
 	@property
 	def python(self):
-		return '{0} = {1}'.format(*map(pythonize, self.params))
+		return '{0} = {1}'.format(self.params[0].python, self.params[1].python)
 
 	@property
 	def cell(self):

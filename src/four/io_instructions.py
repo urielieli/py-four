@@ -1,5 +1,5 @@
-from utils import pythonize
 from instructions import Instruction
+
 
 class IOInstruction(Instruction):
 	arity = 1
@@ -14,6 +14,7 @@ class IOInstruction(Instruction):
 	def operand(self, value):
 		self[0] = value
 
+
 class InputInstruction(IOInstruction):
 	opcode = 7
 
@@ -22,7 +23,8 @@ class InputInstruction(IOInstruction):
 
 	@property
 	def python(self):
-		return '{0} = getc()'.format(*map(pythonize, self.params))
+		return '{0} = getc()'.format(self.params[0].python)
+
 
 class OutputInstruction(IOInstruction):
 	opcode = 5
@@ -32,4 +34,4 @@ class OutputInstruction(IOInstruction):
 
 	@property
 	def python(self):
-		return 'putc({0})'.format(*map(pythonize, self.params))
+		return 'putc({0})'.format(self.params[0].python)
