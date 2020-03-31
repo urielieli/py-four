@@ -37,7 +37,7 @@ class FourParser:
 			if not re.match(constraint, code):
 				raise SyntaxError(error_msg)
 
-		return re.match('^3\.(\d*4)$', code).group(1)
+		return re.match('^3\.(\d*)4$', code).group(1)
 
 	@staticmethod
 	def tokenize(code):

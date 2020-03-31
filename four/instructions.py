@@ -34,7 +34,7 @@ class Instruction:
 		return 1 + cls.arity * 2
 
 	def __str__(self):
-		return ('{}' + ' {:^4}' * self.arity).format(self.opcode, *map(str, self.params))
+		return ('{}' + ' {:0>2}' * self.arity).format(self.opcode, *[param.value for param in self.params])
 
 	@property
 	def python(self):
@@ -53,7 +53,7 @@ class RootInstruction(Instruction):
 
 	@property
 	def python(self):
-		return indent_multiline('\n'.join(map(lambda inst: inst.python, self.instructions)), self.indent)
+		return indent_multiline('\n'.join([inst.python for inst in self.instructions]), self.indent)
 
 	def __iadd__(self, inst):
 		self.instructions.append(inst)
