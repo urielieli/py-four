@@ -1,5 +1,4 @@
 import operator
-
 from instructions import Instruction
 
 
@@ -11,9 +10,6 @@ class ArithmaticInstruction(Instruction):
 		operator.mul: '*',
 		operator.truediv: '//'
 	}
-
-	def __init__(self, *params):
-		super().__init__(self.opcode, *params)
 
 	@property
 	def python(self):

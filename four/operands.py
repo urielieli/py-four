@@ -1,8 +1,6 @@
 class Operand:
 	def __init__(self, value):
-		if isinstance(value, str):
-			value = int(value)
-		self.value = value
+		self.value = int(value)
 
 	@property
 	def python(self):

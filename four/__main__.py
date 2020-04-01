@@ -6,7 +6,6 @@ from tempfile import NamedTemporaryFile
 
 import optimizer
 from four_parser import FourParser
-from formatting import combine_multiline
 
 
 def parse_args():
@@ -41,7 +40,10 @@ if __name__ == '__main__':
 	# verbose
 	if args.verbose:
 		sys.stderr.write('\n<< python source >>\n')
-		sys.stderr.write(combine_multiline(str(root), root.python, '{0:<10} | {1}'))
+		sys.stderr.write('\n'.join([
+			'{0:<10} | {1}'.format(f, p) for f, p in
+			zip(str(root).split('\n'), root.python.split('\n'))
+		]))
 
 	# run
 	with NamedTemporaryFile(mode='w', delete=False) as _file:
