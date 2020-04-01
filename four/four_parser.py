@@ -1,10 +1,9 @@
 import re
 
 from operands import GridAccess, Constant
-from instructions import ExitInstruction, SetInstruction, RootInstruction
-from io_instructions import OutputInstruction, InputInstruction
-from loop_instructions import LoopInstruction, EndLoopInstruction
-from arithmatic_instructions import AdditionInstruction, SubtractionInstruction, MultiplicationInstruction, DivisionInstruction
+from instructions import ExitInstruction, SetInstruction, RootInstruction, \
+	OutputInstruction, InputInstruction, LoopInstruction, EndLoopInstruction, \
+	AdditionInstruction, SubtractionInstruction, MultiplicationInstruction, DivisionInstruction
 
 
 def chunks(itearble, size=1):
