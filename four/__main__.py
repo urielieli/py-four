@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 	# verbose
 	if args.verbose:
-		sys.stderr.write('\n> Transpiled python source:\n')
+		sys.stderr.write('\n<< python source >>\n')
 		sys.stderr.write(combine_multiline(str(root), root.python, '{0:<10} | {1}'))
 
 	# run

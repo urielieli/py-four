@@ -20,7 +20,7 @@ class LoopInstruction(RootInstruction):
 
 	@property
 	def python(self):
-		transpiled = 'while {0} != 0:'.format(self.params[0].python)
+		transpiled = 'while {0}:'.format(self.params[0].python)
 
 		if self.instructions:
 			return '{}\n{}'.format(transpiled,
@@ -28,12 +28,6 @@ class LoopInstruction(RootInstruction):
 										            self.indent))
 		return transpiled
 
-	@property
-	def cell(self):
-		return self[0]
-	@cell.setter
-	def cell(self, value):
-		self[0] = value
 
 class EndLoopInstruction(Instruction):
 	arity = 0

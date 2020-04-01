@@ -10,7 +10,7 @@ def putc(value):
 	sys.stdout.flush()
 
 def getc():
-	return ord(getch())
+	return ord(sys.stdin.read(1))
 
 def exit(exit_code):
 	os._exit(exit_code)
