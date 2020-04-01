@@ -1,5 +1,3 @@
-from constants import GRID_SIZE
-
 """def optimize_constants(tokens):
 
 	print('Optimizing for constants...')
