@@ -47,3 +47,16 @@ The code consists of several instructions, starting with an **1-byte opcode**, f
 so `8 01 [7 00] 9` (without brackets) will input a byte into `G[0]` until `G[1]` is zero (possibly never).
 
 **exit** (opcode `4`) exits the program.
+
+### Example
+
+The program `3.70080050070094` outputs a string received as input. Lets break it down:
+
+```
+3.     |
+7 00   | input a byte into G[0]
+8 00   | while grid[0] is not null
+  5 00 |     output G[0] as a byte
+  7 00 |     input a byte into G[0]
+4      |
+```
