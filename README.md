@@ -58,5 +58,6 @@ The program `3.70080050070094` outputs a string received as input. Lets break it
 8 00   | while grid[0] is not null
   5 00 |     output G[0] as a byte
   7 00 |     input a byte into G[0]
+9      | close loop
 4      |
 ```
