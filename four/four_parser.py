@@ -59,22 +59,22 @@ class FourParser:
 	@staticmethod
 	def parse(tokens):
 		results = []
-		roots_track = []
+		parents = []
 		root = RootInstruction(10)
 
 		while tokens:
 			inst = tokens.pop(0)
 
 			if isinstance(inst, LoopInstruction):
-				roots_track.append(root)
+				parents.append(root)
 				root = inst
 			elif isinstance(inst, EndLoopInstruction):
-				root, loop = roots_track.pop(-1), root
+				root, loop = parents.pop(-1), root
 				root += loop
 			else:
 				root += inst
 
-		if roots_track:
+		if parents:
 			raise Exception('Some loops were left not closed')
 
 		return root
