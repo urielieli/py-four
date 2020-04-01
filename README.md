@@ -20,7 +20,7 @@ HI
 
 The **transpiled python source** can be viewed with the `-v | --verbose` option.
 
-~ Optimizations are available under the `-o | --optimize` option~ (currently unstable).
+~Optimizations are available under the `-o | --optimize` option~ (currently unstable).
 
 ## 4 Guide
 

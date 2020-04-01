@@ -6,9 +6,11 @@ class Operand:
 	def python(self):
 		return str(self.value)
 
+
 class Constant(Operand):
 	def __eq__(self, other):
 		return isinstance(other, Constant) and (self.value == other.value)
+
 
 class GridAccess(Operand):
 	def __eq__(self, other):

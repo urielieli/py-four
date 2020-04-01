@@ -16,12 +16,12 @@ class FourParser:
 		1: (SubtractionInstruction, [GridAccess, GridAccess, GridAccess]),
 		2: (MultiplicationInstruction, [GridAccess, GridAccess, GridAccess]),
 		3: (DivisionInstruction, [GridAccess, GridAccess, GridAccess]),
-		4: (ExitInstruction, [None]),
+		4: (ExitInstruction, []),
 		5: (OutputInstruction, [GridAccess]),
 		6: (SetInstruction, [GridAccess, Constant]),
 		7: (InputInstruction, [GridAccess]),
 		8: (LoopInstruction, [GridAccess]),
-		9: (EndLoopInstruction, [None])
+		9: (EndLoopInstruction, [])
 	}
 
 	@staticmethod
@@ -57,9 +57,8 @@ class FourParser:
 
 	@staticmethod
 	def parse(tokens):
-		results = []
 		parents = []
-		root = RootInstruction(10)
+		root = RootInstruction()
 
 		while tokens:
 			inst = tokens.pop(0)

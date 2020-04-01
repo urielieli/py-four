@@ -1,6 +1,4 @@
-import sys, os
-from msvcrt import getch
-from operator import add, sub, mul, truediv
+import os, sys
 
 
 def putc(value):

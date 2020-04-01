@@ -4,7 +4,6 @@ import operator
 from operands import GridAccess, Constant
 
 
-
 def indent_multiline(string):
 	return '\n'.join('    {}'.format(line) for line in string.split('\n'))
 
