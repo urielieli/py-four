@@ -2,7 +2,9 @@
 
 **py-four** is a Python interpreter for the [**4** esoteric programming language](http://esolangs.org/wiki/4).
 
-For a *quick* introduction with **4** code, scroll to the [this section](#4 Guide).
+For a *quick* introduction with **4** code, scroll to the [**4 Guide**](https://github.com/urielieli/py-four/#4-guide).
+
+The `four` directory is a package for the interpreter; The `samples` directory contains **4** code samples.
 
 ## Quickstart
 
