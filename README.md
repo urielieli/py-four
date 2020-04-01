@@ -1,6 +1,6 @@
 # py-four
 
-**py-four** is a Python interpreter for the [**4** esoteric programming language](http://esolangs.org/wiki/4).
+**py-four** is a Python interpreter for the [**4** esoteric programming language](http://esolangs.org/wiki/4). You can try it in your browser on [Try it Online!](https://tio.run/##HYuJCcBAEAI7CrP/pf/CNl5EZBTM3XgasMaIxk0R4U2GqDKbHtU5A4fB4RXo4gI3yVFwXXTxlvFbtYoo5rL5HTlF5u4H) thanks to [@DennisMitchell](https://github.com/DennisMitchell/).
 
 For a *quick* introduction with **4** code, scroll to the [**4 Guide**](https://github.com/urielieli/py-four/#4-guide).
 
@@ -18,15 +18,9 @@ $ python four -e 3.60072601735005014
 HI
 ```
 
-You can try **py-four** in your browser on [Try it Online!](https://tio.run/##HYuJCcBAEAI7CrP/pf/CNl5EZBTM3XgasMaIxk0R4U2GqDKbHtU5A4fB4RXo4gI3yVFwXXTxlvFbtYoo5rL5HTlF5u4H) thanks to [@DennisMitchell](https://github.com/DennisMitchell/).
+The **transpiled python source** can be viewed with the `-v | --verbose` option.
 
-#### Verbose mode
-
-The transpiled source can be viewed with the `-v | --verbose` option.
-
-#### Optimizations
-
-~Transpilation are available under the `-o | --optimize` option~ (currently unstable).
+~ Optimizations are available under the `-o | --optimize` option~ (currently unstable).
 
 ## 4 Guide
 
