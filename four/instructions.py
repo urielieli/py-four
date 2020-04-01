@@ -40,9 +40,6 @@ class Instruction:
 
 
 class RootInstruction(Instruction):
-	arity = 0
-	indent = 0
-
 	def __init__(self, *params):
 		super().__init__(*params)
 		self.instructions = []

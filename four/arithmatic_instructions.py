@@ -4,7 +4,9 @@ from instructions import Instruction
 
 class ArithmaticInstruction(Instruction):
 	arity = 3
-	operators = {
+	operation = None
+
+	python_operators = {
 		operator.add: '+',
 		operator.sub: '-',
 		operator.mul: '*',
@@ -13,7 +15,7 @@ class ArithmaticInstruction(Instruction):
 
 	@property
 	def python(self):
-		python_operator = self.operators.get(self.operation)
+		python_operator = self.python_operators.get(self.operation)
 		
 		if self.params[0] == self.params[1]:
 			return '{1} {0}= {2}'.format(
